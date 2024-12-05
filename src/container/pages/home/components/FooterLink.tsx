@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const FooterLink = () => {
   return (
-    <div className="block bg-gray-100 p-6">
+    <div className="block bg-gray-100 p-6 ">
       {/* Company Links Section */}
       <h5 className="text-dark mt-2 mb-4 text-center text-xl font-bold text-gray-800">
         Company Links

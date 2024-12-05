@@ -3,7 +3,7 @@ import React from "react";
 
 const MobileAppSection = () => {
   return (
-    <section className="mobile-app pt-24 pb-12 bg-gray-100" style={{ margin: "10px" }}>
+    <section className="mobile-app pt-24 pb-12 bg-gray-100 " style={{ margin: "10px" }}>
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap">
           {/* Left Content */}
