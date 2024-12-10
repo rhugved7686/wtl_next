@@ -1,81 +1,94 @@
 "use client";
-import React, { useState } from "react";
 
-const cars = [
-  {
-    image: "https://www.popularmaruti.com/blog/wp-content/uploads/2022/12/20903608375b891fb77e8402.66922053.jpg",
-    title: "Hatchback",
-  },
-  {
-    image: "https://worldtriplink.com/images/swift.jpeg",
-    title: "Hatchback",
-  },
-  {
-    image: "https://www.girnationalpark.in/uploads/0000/25/2021/11/22/etios-car.jpg",
-    title: "Sedan",
-  },
-  {
-    image: "https://worldtriplink.com/images/swift-dzire-car-jpg-500x500.webp",
-    title: "Sedan",
-  },
-  {
-    image: "https://worldtriplink.com/images/536-5368941_innova-crysta-images-hd-hd-png-download.png",
-    title: "SUV",
-  },
-  {
-    image: "https://worldtriplink.com/images/c6es93a_1572125.jpg",
-    title: "SUV",
-  },
-];
+import React from "react";
+import dynamic from "next/dynamic";
+
+// Dynamically import react-slick (client-side only)
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
+
+// Import required CSS
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CabImg = () => {
-  const [favorites, setFavorites] = useState({}); 
-  const handleFavoriteToggle = (index: number) => {
-    setFavorites((prev) => ({
-      ...prev,
-      [index]: !prev[index], 
-    }));
+  // Slider settings
+  const settings = {
+    dots: true, // No navigation dots
+    infinite: true, // Loop through images infinitely
+    speed: 3000, // Scrolling speed
+    slidesToShow: 3, // Number of slides visible at a time
+    slidesToScroll: 2, // Number of slides to scroll per step
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 0, // Continuous scrolling
+    cssEase: "linear", // Smooth scrolling
+    responsive: [
+      {
+        breakpoint: 1024, // For devices smaller than 1024px
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 768, // For devices smaller than 768px
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480, // For devices smaller than 480px
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div>
-      <section className="py-12 bg-gray-100" style={{ padding: "50px" }}>
-        <div className="container px-4 mx-auto">
-          <div className="text-center">
-            <h1 className="flex justify-center mt-3 text-4xl font-bold">Book Your Cab Now!</h1>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
-            {cars.map((car, index) => (
-              <div
-                key={index}
-                className="overflow-hidden transition-transform transform rounded-lg shadow-md hover:scale-105 hover:shadow-xl"
-              >
-                <div className="relative">
-                  <a href="#Form" className="block">
-                    <img src={car.image} alt={car.title} className="w-full h-auto" />
-                  </a>
-                  <div
-                    onClick={() => handleFavoriteToggle(index)}
-                    className="absolute p-2 rounded-full shadow-md cursor-pointer top-3 right-3"
-                    title="Save for later"
-                  >
-                    <i
-                      className={`text-xl ${
-                        favorites[index] ? "text-red-500 la la-heart" : "text-gray-400 la la-heart-o"
-                      }`}
-                    ></i>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold">{car.title}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
+    <section className="slider-container">
+      <Slider {...settings}>
+        <div className="w-full h-60 sm:h-60 md:h-80 lg:h-96">
+          <img
+            className="object-contain w-full h-full"
+            src="/image/maruti-swift-dzire.webp"
+            alt="Maruti Swift Dzire"
+            
+          />
+          <h5 className="flex justify-center mb-20">Hatchback</h5>
         </div>
-      </section>
-    </div>
+        <div className="w-full h-60 sm:h-60 md:h-80 lg:h-96">
+          <img
+            className="object-contain w-full h-full"
+            src="/image/wagonr.webp"
+            alt="WagonR"
+          />
+           <h5 className="flex justify-center mb-20">Hatchback</h5>
+        </div>
+        <div className="w-full h-60 sm:h-60 md:h-80 lg:h-96">
+          <img
+            className="object-contain w-full h-full"
+            src="/image/Toyota.webp"
+            alt="Toyota"
+          />
+        <h5 className="flex justify-center mb-20">Sedan</h5>
+        </div>
+        <div className="w-full h-60 sm:h-60 md:h-80 lg:h-96">
+          <img
+            className="object-contain w-full h-full"
+            src="/image/Maruti-Suzuki-Ertiga.webp"
+            alt="Maruti Suzuki Ertiga"
+          />
+          <h5 className="flex justify-center mb-20">MUV</h5>
+        </div>
+        <div className="w-full h-60 sm:h-60 md:h-80 lg:h-96">
+          <img
+            className="object-contain w-full h-full"
+            src="/image/innova.jpg"
+            alt="Innova"
+          />
+        <h5 className="flex justify-center mb-20">SUV</h5>
+        </div>
+      </Slider>
+    </section>
   );
 };
 

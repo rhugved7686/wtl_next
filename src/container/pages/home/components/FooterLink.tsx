@@ -1,216 +1,149 @@
-"use client";
-import Link from 'next/link';
+import React from 'react';
 
-const FooterLink = () => {
+const Footer = () => {
   return (
-    <div className="block bg-gray-100 p-6 ">
-      {/* Company Links Section */}
-      <h5 className="text-dark mt-2 mb-4 text-center text-xl font-bold text-gray-800">
-        Company Links
-      </h5>
-      <table className="mx-auto w-full mb-6 ml-6">
-        <tbody>
-          <tr>
-            <td><Link href="/">Home</Link></td>
-            <td><Link href="/about">About</Link></td>
-            <td><Link href="/services">Service</Link></td>
-            <td><Link href="/contact">Contact</Link></td>
-          </tr>
-        </tbody>
-      </table>
-
-      {/* Popular Cities Section */}
-      <h5 className="text-dark mt-2 mb-4 text-center text-xl font-bold text-gray-800">
-        Popular Cities
-      </h5>
-      <table className="mx-auto w-full mb-6 ml-6">
-        <tbody>
-          <tr>
-            <td><Link href="/city/Pune">Pune</Link></td>
-            <td><Link href="/city/Mumbai">Mumbai</Link></td>
-            <td><Link href="/city/Kolhapur">Kolhapur</Link></td>
-            <td><Link href="/city/Satara">Satara</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/city/Nashik">Nashik</Link></td>
-            <td><Link href="/city/Ratnagiri">Ratnagiri</Link></td>
-            <td><Link href="/city/Shirdi">Shirdi</Link></td>
-            <td><Link href="/city/Ahmednagar">Ahmednagar</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/city/Beed">Beed</Link></td>
-            <td><Link href="/city/Jalna">Jalna</Link></td>
-            <td><Link href="/city/Lonavala">Lonavala</Link></td>
-            <td><Link href="/city/Akola">Akola</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/city/Sindhudurg">Sindhudurg</Link></td>
-            <td><Link href="/city/Latur">Latur</Link></td>
-            <td><Link href="/city/Osmanabad">Osmanabad</Link></td>
-            <td><Link href="/city/Nanded">Nanded</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/city/Washim">Washim</Link></td>
-            <td><Link href="/city/Wardha">Wardha</Link></td>
-            <td><Link href="/city/Palghar">Palghar</Link></td>
-            <td><Link href="/city/Chandarpur">Chandarpur</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/city/Gondia">Gondia</Link></td>
-            <td><Link href="/city/Gadchiroli">Gadchiroli</Link></td>
-            <td><Link href="/city/Amravati">Amravati</Link></td>
-            <td><Link href="/city/Aurangabad">Aurangabad</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/city/Bhandara">Bhandara</Link></td>
-            <td><Link href="/city/Buldhana">Buldhana</Link></td>
-            <td><Link href="/city/Dhule">Dhule</Link></td>
-            <td><Link href="/city/Hingoli">Hingoli</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/city/Nagpur">Nagpur</Link></td>
-            <td><Link href="/city/Parbhani">Parbhani</Link></td>
-            <td><Link href="/city/Sangli">Sangli</Link></td>
-            <td><Link href="/city/Raigad">Raigad</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/city/Solapur">Solapur</Link></td>
-            <td><Link href="/city/Thane">Thane</Link></td>
-            <td><Link href="/city/Yavatmal">Yavatmal</Link></td>
-          </tr>
-        </tbody>
-      </table>
-
-      {/* Corporate Cabs Section */}
-      <h5 className="text-dark mt-2 mb-4 text-center text-xl font-bold text-gray-800">
-        Corporate Cabs
-      </h5>
-      <table className="mx-auto w-full mb-6 ml-6">
-        <tbody>
-          <tr>
-            <td><Link href="/Corporate">Corporate Cabs in Delhi</Link></td>
-            <td><Link href="/Corporate3">Corporate Cabs in Pune</Link></td>
-            <td><Link href="/Corporate2">Corporate Cabs in Bangalore</Link></td>
-            <td><Link href="/Corporate3">Corporate Cabs in Mumbai</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/Telangana">Corporate Cabs in Telangana</Link></td>
-            <td><Link href="/Corporate5">Corporate Cabs in Chennai</Link></td>
-            <td><Link href="/Corporate6">Corporate Cabs in Indore</Link></td>
-            <td><Link href="/Corporate7">Corporate Cabs in Surat</Link></td>
-          </tr>
-        </tbody>
-      </table>
-
-      {/* Airport Cabs Section */}
-      <h5 className="text-dark mt-2 mb-4 text-center text-xl font-bold text-gray-800">
-        Airport Cabs
-      </h5>
-      <table className="mx-auto w-full mb-6 ml-6">
-        <tbody>
-          <tr>
-            <td><Link href="/Airport">Airport Cabs in Delhi</Link></td>
-            <td><Link href="/Airport3">Airport Cabs in Pune</Link></td>
-            <td><Link href="/Airport2">Airport Cabs in Bangalore</Link></td>
-            <td><Link href="/Airport3">Airport Cabs in Mumbai</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/Airport4">Airport Cabs in Telangana</Link></td>
-            <td><Link href="/Airport6">Airport Cabs in Surat</Link></td>
-            <td><Link href="/Airport5">Airport Cabs in Indore</Link></td>
-            <td><Link href="/Airport7">Airport Cabs in Chennai</Link></td>
-          </tr>
-        </tbody>
-      </table>
-
-      {/* States Section */}
-      <h5 className="text-dark mt-2 mb-4 text-center text-xl font-bold text-gray-800">
-        States
-      </h5>
-      <table className="mx-auto w-full ml-6">
-        <tbody>
-          <tr>
-            <td><Link href="/state/Maharashtra">Maharashtra</Link></td>
-            <td><Link href="/state/Goa">Goa</Link></td>
-            <td><Link href="/state/Delhi">Delhi</Link></td>
-            <td><Link href="/state/Gujarat">Gujarat</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/state/Madhya Pradesh">MP</Link></td>
-            <td><Link href="/state/Karnataka">Karnataka</Link></td>
-            <td><Link href="/state/Telangana">Telangana</Link></td>
-            <td><Link href="/state/Uttar pradesh">UP</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/state/Rajasthan">Rajasthan</Link></td>
-            <td><Link href="/state/west Bengal">West Bengal</Link></td>
-            <td><Link href="/state/HP">HP</Link></td>
-            <td><Link href="/state/Kerala">Kerala</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/state/Tamil Nadu">Tamil Nadu</Link></td>
-            <td><Link href="/state/Andhra Pradesh">Andhra Pradesh</Link></td>
-            <td><Link href="/state/Punjab">Punjab</Link></td>
-            <td><Link href="/state/Odisha">Odisha</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/state/Chhattisgarh">Chhattisgarh</Link></td>
-            <td><Link href="/state/Arunachal Pradesh">Arunachal Pradesh</Link></td>
-            <td><Link href="/state/Haryana">Haryana</Link></td>
-            <td><Link href="/state/Bihar">Bihar</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/state/Assam">Assam</Link></td>
-            <td><Link href="/state/Jharkhand">Jharkhand</Link></td>
-            <td><Link href="/state/Manipur">Manipur</Link></td>
-            <td><Link href="/state/Uttarakhand">Uttarakhand</Link></td>
-          </tr>
-          <tr>
-            <td><Link href="/state/JK">JK</Link></td>
-          </tr>
-        </tbody>
-      </table>
-
-      {/* Footer Section */}
-      <div className="bg-gray-200 py-4 mt-6">
-        <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-          <div className="lg:w-8/12 text-center lg:text-left">
-            <p className="text-gray-600 text-sm">
-              &copy; Copyright WTL 2023 Made with
-              <span className="text-red-500"> ♥ </span> by{' '}
-              <a href="https://www.cobaztech.com/" className="text-blue-600 hover:underline">
-                cobaztech
-              </a>
-            </p>
+    <div>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <h5 className="text-dark" style={{ marginLeft: '15px', color: '#333' }}>Company Links</h5>
+        <p style={{ marginLeft: '15px', display: 'flex', alignItems: 'center', marginTop: '5px', gap: '10px',color: '#4B9CD3' }}>
+          <a className='underline hover:text-sky-900' href="/">Home</a> | 
+          <a className='underline hover:text-sky-900' href="/about">About</a> | 
+          <a className='underline hover:text-sky-900' href="/services">Service</a> | 
+          <a className='underline hover:text-sky-900' href="/contact">Contact</a>
+        </p>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', textAlign: 'center' }}>
+        <div style={{ padding: '10px', borderRadius: '5px', maxWidth: '300px' }}>
+          <h5 className="text-dark" style={{ margin: '10px 0', marginLeft: '15px', color: '#333', fontSize: '18px' }}>Popular Cities</h5>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'auto', textAlign: 'left', marginLeft: '15px',color: '#00BFFF' }}>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Pune">Pune</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Mumbai">Mumbai</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Kolhapur">Kolhapur</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Satara">Satara</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Nashik">Nashik</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Ratnagiri">Ratnagiri</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Shirdi">Shirdi</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Ahmednagar">Ahmednagar</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Beed">Beed</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Jalna">Jalna</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Lonavala">Lonavala</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Akola">Akola</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Sindhudurg">Sindhudurg</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Latur">Latur</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Osmanabad">Osmanabad</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Nanded">Nanded</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Washim">Washim</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Wardha">Wardha</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Palghar">Palghar</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Chandarpur">Chandarpur</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Gondia">Gondia</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Gadchiroli">Gadchiroli</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Amravati">Amravati</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/city/Aurangabad">Aurangabad</a></span>
           </div>
-          <div className="lg:w-4/12 text-center lg:text-right">
-            <ul className="flex justify-center space-x-4">
-              <li>
-                <a href="https://www.facebook.com/Aimcab/" className="text-blue-600 hover:text-blue-800">
-                  <i className="lab la-facebook-f text-2xl"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-blue-600 hover:text-blue-800">
-                  <i className="lab la-twitter text-2xl"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/aimcabs" className="text-pink-600 hover:text-pink-800">
-                  <i className="lab la-instagram text-2xl"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/aim-cab-77356b208/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in" className="text-blue-700 hover:text-blue-900">
-                  <i className="lab la-linkedin-in text-2xl"></i>
-                </a>
-              </li>
-            </ul>
+        </div>
+        <div style={{ padding: '10px', borderRadius: '5px', maxWidth: 'auto' }}>
+          <h5 className="text-dark" style={{ margin: '10px 0', color: '#333', fontSize: '18px' }}>Corporate Cabs</h5>
+          <p style={{ marginLeft: '15px', display: 'flex', flexDirection: 'column', gap: '10px', textAlign: 'left',color: '#00BFFF' }}>
+            <span><a className='hover:underline hover:text-blue-500' href="/Corporate">Corporate Cabs in Delhi</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/Corporate3">Corporate Cabs in Pune</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/Corporate2">Corporate Cabs in Bangalore</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/Corporate3">Corporate Cabs in Mumbai</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/Telangana">Corporate Cabs in Telangana</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/Corporate5">Corporate Cabs in Chennai</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/Corporate6">Corporate Cabs in Indore</a></span>
+            <span><a className='hover:underline hover:text-blue-500' href="/Corporate7">Corporate Cabs in Surat</a></span>
+          </p>
+        </div>
+        <div style={{ padding: '10px', borderRadius: '5px', maxWidth: 'auto' }}>
+          <h5 className="text-dark" style={{ margin: '10px 0', color: '#333', fontSize: '18px' }}>Airport Cabs</h5>
+          <p style={{ marginLeft: '15px', display: 'flex', flexDirection: 'column', gap: '10px', textAlign: 'left', color: '#00BFFF' }}>
+            <a className='hover:underline hover:text-blue-500'  href="/Airport">Airport Cabs in Delhi</a>
+            <a className='hover:underline hover:text-blue-500' href="/Airport3">Airport Cabs in Pune</a>
+            <a className='hover:underline hover:text-blue-500' href="/Airport2">Airport Cabs in Bangalore</a>
+            <a className='hover:underline hover:text-blue-500' href="/Airport3">Airport Cabs in Mumbai</a>
+            <a className='hover:underline hover:text-blue-500' href="/Airport4">Airport Cabs in Telangana</a>
+            <a className='hover:underline hover:text-blue-500' href="/Airport6">Airport Cabs in Surat</a>
+            <a className='hover:underline hover:text-blue-500' href="/Airport5">Airport Cabs in Indore</a>
+            <a className='hover:underline hover:text-blue-500' href="/Airport7">Airport Cabs in Chennai</a>
+          </p>
+        </div>
+        <div style={{ padding: '10px', borderRadius: '5px', maxWidth: 'auto' }}>
+          <h5 className="text-dark" style={{ margin: '10px 0', color: '#333', fontSize: '18px' }}>States</h5>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'auto', textAlign: 'left', marginLeft: '15px',color: '#00BFFF' }}>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Maharashtra">Maharashtra</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Goa">Goa</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Delhi">Delhi</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Gujarat">Gujarat</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Madhya Pradesh">MP</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Karnataka">Karnataka</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Telangana">Telangana</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Uttar Pradesh">UP</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Rajasthan">Rajasthan</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/West Bengal">West Bengal</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/HP">HP</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Kerala">Kerala</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Tamil Nadu">Tamil Nadu</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Andhra Pradesh">Andhra Pradesh</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Punjab">Punjab</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Odisha">Odisha</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Chhattisgarh">Chhattisgarh</a></span>
+            <span><a className='hover:underline hover:text-blue-500'  href="/state/Arunachal Pradesh">Arunachal Pradesh</a></span>
           </div>
         </div>
       </div>
+      <div className="footer-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px', backgroundColor: '#f5f7fc' }}>
+      <div className="col-lg-8" style={{ textAlign: 'center' }}>
+        <div className="term-box footer-item" style={{ marginTop: '10px' }}>
+          <p className="copy__desc">
+            &copy; Copyright WTL 2023 Made with
+            <span className="la la-heart" style={{ color: 'red' }}></span> by
+            <a href="https://www.cobaztech.com/">cobaztech</a>
+          </p>
+        </div>
+      </div>
+      <div className="col-lg-4" style={{ textAlign: 'center', padding: '10px' }}>
+        <div className="footer-social-box" style={{ display: 'inline-block' }}>
+          <ul className="social-profile" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'inline-flex', gap: '15px' }}>
+            <li style={{ display: 'inline' }}>
+              <a
+                href="https://www.facebook.com/profile.php?id=61554946222967&mibextid=ZbWKwL"
+                style={{ textDecoration: 'none', color: '#3b5998', fontSize: '20px', transition: 'color 0.3s ease' }}
+              >
+                <i className="lab la-facebook-f"></i>
+              </a>
+            </li>
+            <li style={{ display: 'inline' }}>
+              <a
+                href="https://x.com/world_trip_link"
+                style={{ textDecoration: 'none', color: '#1da1f2', fontSize: '20px', transition: 'color 0.3s ease' }}
+              >
+                <i className="lab la-twitter"></i>
+              </a>
+            </li>
+            <li style={{ display: 'inline' }}>
+              <a
+                href="https://www.instagram.com/worldtriplink/"
+                style={{ textDecoration: 'none', color: '#e1306c', fontSize: '20px', transition: 'color 0.3s ease' }}
+              >
+                <i className="lab la-instagram"></i>
+              </a>
+            </li>
+            <li style={{ display: 'inline' }}>
+              <a
+                href="https://www.linkedin.com/in/world-trip-link9562762a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                style={{ textDecoration: 'none', color: '#0077b5', fontSize: '20px', transition: 'color 0.3s ease' }}
+              >
+                <i className="lab la-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+   </div>
+    
   );
 };
 
-export default FooterLink;
+export default Footer;

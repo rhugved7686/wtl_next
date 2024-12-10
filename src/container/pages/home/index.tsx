@@ -7,6 +7,7 @@ import 'line-awesome/dist/line-awesome/css/line-awesome.min.css';
 import Mobileapp from "./components/Mobileapp";
 import FooterLink from "./components/FooterLink";
 
+
 const Home = () => {
   return (
     <>
