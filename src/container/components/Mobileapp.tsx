@@ -29,10 +29,10 @@ const MobileAppSection = () => {
               </ul>
               <div className="pt-8 btn-box">
                 <a href="#" className="inline-block mr-3">
-                  <img src="https://www.worldtriplink.com/images/app-store.png" alt="App Store" />
+                  <img src="/image/app-store.png" alt="App Store" />
                 </a>
                 <a href="#" className="inline-block">
-                  <img src="https://www.worldtriplink.com/images/google-play.png" alt="Google Play" />
+                  <img src="image/play-store.png" alt="Google Play" />
                 </a>
               </div>
             </div>
