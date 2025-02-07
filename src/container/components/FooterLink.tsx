@@ -5,8 +5,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
-      <div className="flex flex-col items-center gap-4 mt-5 lg:flex-row lg:items-start">
+    <div className="mt-500">
+      <div className="flex flex-col items-center gap-4 mt-2 lg:flex-row lg:items-start">
         <h5 className="ml-4 font-bold text-gray-800 lg:mb-0 lg:mr-4" style={{ color: '#333' }}>Company Links</h5>
         <p className="flex flex-wrap items-center gap-2 text-sky-600">
           <Link className="underline hover:text-sky-900" href="/">Home</Link> | 

@@ -1,14 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  
-};
-module.exports = {
   images: {
-    domains: ['cdn.pixabay.com'],
-    
+    domains: [
+      "cdn.pixabay.com",
+      "www.shutterstock.com",
+      "stimg.cardekho.com",
+      "imgd.aeplcdn.com", // Added imgd.aeplcdn.com
+    ],
   },
-}
-
+};
 
 export default nextConfig;
+

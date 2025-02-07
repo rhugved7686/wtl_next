@@ -5,7 +5,7 @@ import Discount from "../components/Discount";
 import CabImg from "../components/CabImg";
 import 'line-awesome/dist/line-awesome/css/line-awesome.min.css';
 import Mobileapp from "../components/Mobileapp";
-import FooterLink from "../components/FooterLink";
+
 
 
 
@@ -17,7 +17,7 @@ const Home = () => {
       <Discount/>
       <CabImg/>
       <Mobileapp/>
-      <FooterLink/>
+      
       </>
   );
 };

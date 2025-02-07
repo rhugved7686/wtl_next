@@ -2,6 +2,7 @@
 import { useState, useRef } from "react";
 import { LoadScript, Autocomplete } from "@react-google-maps/api";
 import Image from "next/image";
+import { useRouter } from "next/navigation";  
 
 // Google Maps API Key (Ensure it has Places API enabled)
 const GOOGLE_MAPS_API_KEY = "AIzaSyCelDo4I5cPQ72TfCTQW-arhPZ7ALNcp8w"; // Replace with your actual key
@@ -17,7 +18,7 @@ const TransportForm = () => {
 
   const pickupAutocompleteRef = useRef(null);  // Ref for Pickup Autocomplete
   const dropAutocompleteRef = useRef(null);  // Ref for Drop Autocomplete
-
+  const router = useRouter();  // Initialize useRoute
   const handleTransportChange = (transport) => {
     setSelectedTransport(transport);
     setTripType("");
@@ -42,20 +43,21 @@ const TransportForm = () => {
     const apiEndpoint = selectedTransport === "Cabs" ? "/api/cabs" : "/api/busses";
 
     try {
-      const response = await fetch(apiEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      // const response = await fetch(apiEndpoint, {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(formData),
+      // });
 
-      const data = await response.json();
+      // const data = await response.json();
 
-      if (response.ok) {
-        alert("Booking successful!");
-        console.log("Response:", data);
-      } else {
-        alert("Error: " + (data.error || "Something went wrong!"));
-      }
+      // if (response.ok) {
+       // alert("Booking successful!");
+        router.push("/carspage");
+       // console.log("Response:", data);
+      // } else {
+      //   alert("Error: " + (data.error || "Something went wrong!"));
+      // }
     } catch (error) {
       alert("Failed to submit booking. Please try again.");
       console.error("Error:", error);
@@ -110,6 +112,7 @@ const TransportForm = () => {
               <select
                 className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md"
                 value={tripType}
+                required
                 onChange={handleTripTypeChange}
               >
                 <option value="">Select Trip Type</option>
@@ -129,6 +132,7 @@ const TransportForm = () => {
                   >
                     <input
                       type="text"
+                      required
                       className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md"
                       value={pickupLocation}
                       onChange={(e) => setPickupLocation(e.target.value)}
@@ -146,6 +150,7 @@ const TransportForm = () => {
                   >
                     <input
                       type="text"
+                      required
                       className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md"
                       value={dropLocation}
                       onChange={(e) => setDropLocation(e.target.value)}
@@ -162,6 +167,7 @@ const TransportForm = () => {
                 type="datetime-local"
                 className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md"
                 value={startDate}
+                required
                 onChange={(e) => setStartDate(e.target.value)}
               />
             </div>
@@ -173,6 +179,7 @@ const TransportForm = () => {
                   type="datetime-local"
                   className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md"
                   value={returnDate}
+                  required
                   onChange={(e) => setReturnDate(e.target.value)}
                 />
               </div>
