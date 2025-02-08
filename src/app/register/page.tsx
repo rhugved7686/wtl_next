@@ -104,7 +104,7 @@ const RegisterPage = () => {
             />
           </div>
 
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label className="block mb-1 text-sm font-medium text-gray-600">
               Confirm Password
             </label>
@@ -116,7 +116,7 @@ const RegisterPage = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
-          </div>
+          </div> */}
 
           <div className="mb-4">
             <label className="block mb-1 text-sm font-medium text-gray-600">
