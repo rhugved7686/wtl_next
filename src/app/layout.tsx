@@ -3,6 +3,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/container/components/Navbar";
 import FooterLinks from "../container/components/FooterLink"; // Ensure this path is correct
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import FloatingButtons from "@/container/components/FloatingButtons";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,14 +29,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+   
     <html lang="en">
+      
       <body
+      
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <ToastContainer />
         <NavBar />
       
         {children}
         <FooterLinks/>
+        <FloatingButtons/>
       </body>
     </html>
   );

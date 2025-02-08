@@ -1,22 +1,41 @@
 "use client"; // Ensures client-side rendering
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // Use next/navigation instead of next/router
+import { useRouter } from "next/navigation"; // Use next/navigation for App Router
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-  const router = useRouter(); // Correct hook for App Router
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
 
-    // Example logic
-    if (email === "admin@example.com" && password === "password") {
-      router.push("/dashboard"); // Redirect on successful login
-    } else {
-      setError("Invalid email or password");
+    try {
+      const response = await fetch("https://your-java-api.com/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem("user", JSON.stringify(data)); // Store user data
+        router.push("/"); // Redirect on success
+      } else {
+        setError(data.message || "Invalid credentials");
+      }
+    } catch (error) {
+      setError("Something went wrong. Try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -64,14 +83,14 @@ const LoginPage = () => {
 
           <button
             type="submit"
-            className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 disabled:bg-gray-400"
+            disabled={loading}
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
         <div className="mt-4 text-center">
-          {/* Forgot Password Option */}
           <p className="text-sm text-gray-600">
             <a href="/forgot-password" className="text-blue-500 hover:underline">
               Forgot Password?

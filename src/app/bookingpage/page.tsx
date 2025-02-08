@@ -1,40 +1,82 @@
-import FooterLinks from "@/container/components/FooterLink"; // Ensure this path is correct
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Invoice = () => {
+  const router = useRouter();
+  const [bookingData, setBookingData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    pickup: "Pune, Maharashtra, India",
+    drop: "Mumbai, Maharashtra, India",
+    date: "2025-02-19",
+    time: "18:18",
+    tripType: "Oneway",
+    distance: "151 km",
+    model: "Hatchback",
+    seats: "4+1",
+    fuelType: "CNG-Diesel",
+    price: 2248,
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBookingData({ ...bookingData, [e.target.id]: e.target.value });
+  };
+  
+
+  const handleBooking = async () => {
+    if (!bookingData.name || !bookingData.email || !bookingData.phone) {
+      toast.error("Please fill all the fields");
+      return;
+    }
+
+    try {
+      //const response = await fetch("https://your-api-url.com/bookings", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(bookingData),
+      // });
+
+      //if (response.ok) {
+        toast.success("Booking Successful!");
+        setTimeout(() => {
+          router.push("/booking-success"); // Redirect to thanks page after booking
+        }, 2000);
+      // } else {
+      //   toast.error("Booking Failed. Try again.");
+      // }
+    } catch (error) {
+      console.error("Booking Error:", error);
+      toast.error("Something went wrong!");
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-200 mb-20">
-      {/* Main Content */}
       <div className="flex-grow flex justify-center items-start pt-10 px-4">
         <div className="bg-white shadow-xl rounded-lg p-6 w-[94%] mx-auto text-center">
           <h1 className="text-xl md:text-2xl font-semibold">Invoice</h1>
 
-          {/* Responsive Box with Gray Border and Vertical Divider */}
           <div className="border border-gray-400 mt-4 w-full h-auto flex flex-col md:flex-row">
             <div className="w-full md:w-1/2 h-full flex flex-col items-start p-4">
               <span className="text-lg md:text-xl font-bold">Cab Information:</span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Model Type:</span> Hatchback
+                <span className="font-bold">Model Type:</span> {bookingData.model}
               </span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Seats:</span> 4+1
+                <span className="font-bold">Seats:</span> {bookingData.seats}
               </span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Fuel Type:</span> CNG-Diesel
+                <span className="font-bold">Fuel Type:</span> {bookingData.fuelType}
               </span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Availability:</span> Available
-              </span>
-              <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Price:</span> 1963
-              </span>
-              <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Service Charge:</span> 95
-              </span>
-              <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">GST:</span> 190
-              </span>
-              <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Total Amount:</span> 2248
+                <span className="font-bold">Total Amount:</span> ₹{bookingData.price}
               </span>
 
               <div className="mt-1">
@@ -42,59 +84,58 @@ const Invoice = () => {
               </div>
             </div>
 
-            {/* Vertical Divider */}
             <div className="w-full md:w-px bg-gray-400 h-full md:h-auto"></div>
 
-            {/* Right Side Information */}
             <div className="w-full md:w-1/2 h-full flex flex-col items-start p-4">
               <span className="text-lg md:text-xl font-bold">Trip Information:</span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Pickup Location:</span> Pune, Maharashtra, India
+                <span className="font-bold">Pickup Location:</span> {bookingData.pickup}
               </span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Drop Location:</span> Mumbai, Maharashtra, India
+                <span className="font-bold">Drop Location:</span> {bookingData.drop}
               </span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Date:</span> 2025-02-19
+                <span className="font-bold">Date:</span> {bookingData.date}
               </span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Return Date:</span> Not Available
+                <span className="font-bold">Time:</span> {bookingData.time}
               </span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Time:</span> 18:18
+                <span className="font-bold">Trip Type:</span> {bookingData.tripType}
               </span>
               <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Trip Type:</span> Oneway
-              </span>
-              <span className="text-sm md:text-base mt-2">
-                <span className="font-bold">Distance:</span> 151 km
+                <span className="font-bold">Distance:</span> {bookingData.distance}
               </span>
 
-              {/* Input Fields for Name, Email, Phone */}
               <div className="mt-4 w-full">
                 <input
                   type="text"
                   id="name"
                   placeholder="Name"
+                  value={bookingData.name}
+                  onChange={handleInputChange}
                   className="w-full mt-4 p-2 border border-gray-300 rounded-md"
                 />
                 <input
                   type="email"
                   id="email"
                   placeholder="Email"
+                  value={bookingData.email}
+                  onChange={handleInputChange}
                   className="w-full mt-4 p-2 border border-gray-300 rounded-md"
                 />
                 <input
                   type="text"
                   id="phone"
                   placeholder="Phone"
+                  value={bookingData.phone}
+                  onChange={handleInputChange}
                   className="w-full mt-4 p-2 border border-gray-300 rounded-md"
                 />
               </div>
 
-              {/* "Book Now" Button */}
               <div className="mt-6">
-                <button className="px-6 py-2 bg-blue-500 text-white rounded-md">
+                <button onClick={handleBooking} className="px-6 py-2 bg-blue-500 text-white rounded-md">
                   Book Now
                 </button>
               </div>
@@ -102,8 +143,6 @@ const Invoice = () => {
           </div>
         </div>
       </div>
-
-    
     </div>
   );
 };
