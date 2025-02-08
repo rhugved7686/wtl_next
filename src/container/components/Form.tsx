@@ -74,17 +74,23 @@ const TransportForm = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen ">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://cdn.pixabay.com/photo/2020/03/19/18/52/bend-4948376_1280.jpg"
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-        />
-      </div>
+      <div className="relative w-full h-[75vh] sm:h-[85vh]  overflow-hidden">
+  {/* Background Image */}
+  <Image
+    src="https://www.shutterstock.com/image-photo/car-driving-on-beautiful-road-600nw-2473243119.jpg"
+    alt="Background Image"
+    layout="fill"
+    objectFit="cover"
+    className="opacity-60"
+  />
+
+  {/* Overlay Effect for Better Readability */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-transparent"></div>
+</div>
+
+
 
       {/* Form Content */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
